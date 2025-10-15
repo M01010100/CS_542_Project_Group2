@@ -54,7 +54,13 @@ def get_recommendations(transactions):
 
     print("Running Apriori algorithm...")
     # Run Apriori on the sparse DataFrame
-    frequent_itemsets = apriori(df, min_support=0.001, use_colnames=True)
+    # *** THE ONLY CHANGE IS ON THE NEXT LINE: min_support is lowered from 0.001 to 0.0005 ***
+    frequent_itemsets = apriori(df, min_support=0.0005, use_colnames=True)
+    
+    if frequent_itemsets.empty:
+        print("Warning: No frequent itemsets found with the current support threshold. No rules will be generated.")
+        return None
+
     print(f"Apriori complete. Found {len(frequent_itemsets)} frequent itemsets.")
 
     print("Generating association rules...")
@@ -76,12 +82,17 @@ def main():
     if transactions:
         rules = get_recommendations(transactions)
 
-        # Save the rules and product list to JSON files for the web app
-        print("Saving rules and product list to JSON files...")
-        rules.to_json('recommendation_rules.json', orient='records')
-        with open('product_list.json', 'w') as f:
-            json.dump(product_list, f)
-        print("Files saved successfully. You can now run the web interface.")
+        # Only save files if rules were actually generated
+        if rules is not None and not rules.empty:
+            # Save the rules and product list to JSON files for the web app
+            print("Saving rules and product list to JSON files...")
+            rules.to_json('recommendation_rules.json', orient='records')
+            with open('product_list.json', 'w') as f:
+                json.dump(product_list, f)
+            print("Files saved successfully. You can now run the web interface.")
+        else:
+            print("No rules were generated, so no files were saved. Try lowering the min_support value further if needed.")
+
 
 if __name__ == '__main__':
     main()
