@@ -1,16 +1,12 @@
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import csv
+
 import Apriori as apriori_module
-
-def load_data(file_path):
-    data = pd.read_csv(file_path)
-    return data    
-
+import TimeSeries as ts_module   
+import Clustering as clust_module
 def main():
-    data = load_data('data/Groceries_dataset.csv')
-    apriori_module.run_apriori(data)
+    #apriori_module.run_apriori()
+    #apriori_module.interactive_predict_for_customer()
+    #ts_module.time_series_forecast()
+    clust_module.customer_segmentation()
 
 
 if __name__ == "__main__":

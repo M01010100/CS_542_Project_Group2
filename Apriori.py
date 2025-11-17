@@ -2,24 +2,9 @@
 from mlxtend.frequent_patterns import apriori, association_rules
 from mlxtend.preprocessing import TransactionEncoder
 import pandas as pd 
+from dataHelper import load_data, sort_member_numbers, print_member_items
 
-def sort_member_numbers(data):
-    # Sorts data by Member_number and returns a dictionary of all items per member
-    sorted_data = data.sort_values(by="Member_number", ascending=True)
-    items = dict()
-    for row in sorted_data.iterrows():
-        member_number = row[1]['Member_number']
-        item_description = row[1]['itemDescription']
-        if member_number not in items:
-            items[member_number] = []
-        items[member_number].append(item_description)
-    return items
-
-def print_member_items(data, x):
-    member_items = sort_member_numbers(data)
-    for member, items in list(member_items.items())[:x]:
-        print(f"Member {member}: {items}")
-
+RULES = None  
 
 def apply_apriori(items_dict, min_support=0.01):
     transactions = list(items_dict.values())
@@ -54,9 +39,6 @@ def organize_results(frequent_itemsets, rules, top_n=10):
     return organized
 
 def analyze_results(organized_results):
-    """
-    Prints detailed analysis of the organized results
-    """
     print("\n" + "="*80)
     print("MARKET BASKET ANALYSIS RESULTS")
     print("="*80)
@@ -96,7 +78,7 @@ def analyze_results(organized_results):
         print(f"  Lift: {row['lift']:.2f} | Confidence: {row['confidence']:.2%} | Support: {row['support']:.3f}")
     
     print("\n" + "="*80)
-    print("\n📈 INTERPRETATION GUIDE:")
+    print("\nINTERPRETATION GUIDE:")
     print("-" * 80)
     print("• Support: How frequently the itemset appears in transactions")
     print("• Confidence: Probability of buying Y given that X is bought")
@@ -134,7 +116,37 @@ def predict_for_customer(customer_items, rules, top_n=5):
     recommendations = sorted(recommendations, key=lambda x: x['confidence'], reverse=True)
     return recommendations[:top_n]
 
-def run_apriori(data):
+def interactive_predict_for_customer():
+    customer_items = input("Enter items the customer has (comma-separated): ")
+    customer_items = [item.strip() for item in customer_items.split(',')]
+
+    rules = RULES
+    top_n  = int(input("Enter number of recommendations to return (default 5): ") or 5)
+
+    recommendations = []
+    customer_set = set(customer_items)
+    
+    for idx, rule in rules.iterrows():
+        antecedents = set(rule['antecedents'])
+        consequents = set(rule['consequents'])
+        
+        # If customer has all antecedent items and doesn't have consequent
+        if antecedents.issubset(customer_set) and not consequents.intersection(customer_set):
+            for item in consequents:
+                recommendations.append({
+                    'item': item,
+                    'confidence': rule['confidence'],
+                    'lift': rule['lift'],
+                    'based_on': list(antecedents)
+                })
+    
+    # Sort by confidence and return top N
+    recommendations = sorted(recommendations, key=lambda x: x['confidence'], reverse=True)
+    return recommendations[:top_n]
+
+def run_apriori():
+    global RULES
+    data = load_data('data/Groceries_dataset.csv')
     print(" Dataset Preview:")
     print(data.head())
     print(f"\nTotal transactions: {len(data)}")
@@ -148,7 +160,7 @@ def run_apriori(data):
     print("\n Running Apriori algorithm...")
     items_dict = sort_member_numbers(data)
     frequent_itemsets, rules = apply_apriori(items_dict, min_support=0.01)
-    
+    RULES = rules  
     # Organize and analyze results
     organized = organize_results(frequent_itemsets, rules, top_n=10)
     analyze_results(organized)
