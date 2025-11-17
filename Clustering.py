@@ -127,10 +127,10 @@ def display_cluster_profiles(df, items_dict, feature_cols):
     print("="*80)
     
     segment_names = {
-        0: "🛒 Light Shoppers",
-        1: "💰 Regular Customers", 
-        2: "⭐ Premium Shoppers",
-        3: "🎯 Bulk Buyers"
+        0: " Light Shoppers",
+        1: " Regular Customers", 
+        2: " Premium Shoppers",
+        3: " Bulk Buyers"
     }
     
     for cluster in sorted(df['cluster'].unique()):
@@ -141,8 +141,8 @@ def display_cluster_profiles(df, items_dict, feature_cols):
         print('='*80)
         
         # Statistics
-        print(f"\n📊 Size: {len(cluster_data)} customers ({len(cluster_data)/len(df)*100:.1f}%)")
-        print(f"\n📈 Average Metrics:")
+        print(f"\n Size: {len(cluster_data)} customers ({len(cluster_data)/len(df)*100:.1f}%)")
+        print(f"\n Average Metrics:")
         for col in feature_cols:
             avg_val = cluster_data[col].mean()
             print(f"   {col}: {avg_val:.2f}")
