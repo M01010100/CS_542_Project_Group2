@@ -285,6 +285,7 @@ def compare_clustering_algorithms(scaled_features, df):
     print(f"K-Means:")
     print(f"  Clusters found: {len(set(kmeans_labels))}")
     print(f"  Silhouette Score: {silhouette_score(scaled_features, kmeans_labels):.3f}")
+    print(f"  Davies-Bouldin Score: {davies_bouldin_score(scaled_features, kmeans_labels):.3f}")
     
     if len(set(dbscan_labels)) > 1:
         print(f"\nDBSCAN:")
@@ -293,3 +294,46 @@ def compare_clustering_algorithms(scaled_features, df):
         non_noise = dbscan_labels[dbscan_labels != -1]
         if len(set(non_noise)) > 1:
             print(f"  Silhouette Score: {silhouette_score(scaled_features[dbscan_labels != -1], non_noise):.3f}")
+            print(f"  Davies-Bouldin Score: {davies_bouldin_score(scaled_features[dbscan_labels != -1], non_noise):.3f}")
+    
+    # Visualize comparison
+    pca = PCA(n_components=2)
+    features_2d = pca.fit_transform(scaled_features)
+    
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 6))
+    
+    # K-Means visualization
+    scatter1 = ax1.scatter(features_2d[:, 0], features_2d[:, 1], 
+                          c=kmeans_labels, cmap='viridis', alpha=0.6, s=50)
+    ax1.set_xlabel(f'PC1 ({pca.explained_variance_ratio_[0]:.1%} variance)')
+    ax1.set_ylabel(f'PC2 ({pca.explained_variance_ratio_[1]:.1%} variance)')
+    ax1.set_title('K-Means Clustering')
+    plt.colorbar(scatter1, ax=ax1, label='Cluster')
+    
+    # DBSCAN visualization
+    scatter2 = ax2.scatter(features_2d[:, 0], features_2d[:, 1], 
+                          c=dbscan_labels, cmap='viridis', alpha=0.6, s=50)
+    ax2.set_xlabel(f'PC1 ({pca.explained_variance_ratio_[0]:.1%} variance)')
+    ax2.set_ylabel(f'PC2 ({pca.explained_variance_ratio_[1]:.1%} variance)')
+    ax2.set_title('DBSCAN Clustering')
+    plt.colorbar(scatter2, ax=ax2, label='Cluster')
+    
+    plt.tight_layout()
+    plt.show()
+    
+    # Cluster size comparison
+    print("\n Cluster Size Distribution:")
+    print("-" * 80)
+    
+    kmeans_counts = pd.Series(kmeans_labels).value_counts().sort_index()
+    print("\nK-Means:")
+    for cluster, count in kmeans_counts.items():
+        print(f"  Cluster {cluster}: {count} customers ({count/len(kmeans_labels)*100:.1f}%)")
+    
+    dbscan_counts = pd.Series(dbscan_labels).value_counts().sort_index()
+    print("\nDBSCAN:")
+    for cluster, count in dbscan_counts.items():
+        cluster_label = "Noise" if cluster == -1 else f"Cluster {cluster}"
+        print(f"  {cluster_label}: {count} customers ({count/len(dbscan_labels)*100:.1f}%)")
+    
+    return kmeans_labels, dbscan_labels
