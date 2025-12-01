@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Grocery - ML-Powered Grocery Analytics</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-shopping-cart"></i>
+                Smart Grocery
+            </div>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#results">Results</a></li>
+                <li><a href="#charts">Analytics</a></li>
+                <li><a href="#clusters">Segments</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Transform Grocery Retail with <span>Machine Learning</span></h1>
+                <p>Unlock powerful insights from transaction data using advanced market basket analysis, time series forecasting, and customer segmentation.</p>
+                <div class="cta-buttons">
+                    <a href="#results" class="btn btn-primary">
+                        <i class="fas fa-chart-line"></i>
+                        View Results
+                    </a>
+                    <a href="#features" class="btn btn-secondary">
+                        <i class="fas fa-info-circle"></i>
+                        Learn More
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">38,765</div>
+                        <div class="stat-label">Transactions Analyzed</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">3,898</div>
+                        <div class="stat-label">Unique Members</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">1,117</div>
+                        <div class="stat-label">Rules Discovered</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-card">
+                    <div class="hero-card-header">
+                        <span class="hero-card-title">Product Recommendations</span>
+                        <span class="live-badge">AI-Powered</span>
+                    </div>
+                    <div class="prediction-item">
+                        <div class="prediction-product">
+                            <div class="prediction-icon"><i class="fas fa-glass-water"></i></div>
+                            <span class="prediction-name">Whole Milk</span>
+                        </div>
+                        <span class="prediction-confidence">78.4%</span>
+                    </div>
+                    <div class="prediction-item">
+                        <div class="prediction-product">
+                            <div class="prediction-icon"><i class="fas fa-carrot"></i></div>
+                            <span class="prediction-name">Other Vegetables</span>
+                        </div>
+                        <span class="prediction-confidence">75.0%</span>
+                    </div>
+                    <div class="prediction-item">
+                        <div class="prediction-product">
+                            <div class="prediction-icon"><i class="fas fa-bread-slice"></i></div>
+                            <span class="prediction-name">Rolls/Buns</span>
+                        </div>
+                        <span class="prediction-confidence">74.5%</span>
+                    </div>
+                    <div class="prediction-item">
+                        <div class="prediction-product">
+                            <div class="prediction-icon"><i class="fas fa-ice-cream"></i></div>
+                            <span class="prediction-name">Yogurt</span>
+                        </div>
+                        <span class="prediction-confidence">53.1%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features">
+        <div class="section-header">
+            <span class="section-tag">Key Features</span>
+            <h2 class="section-title">Powered by Advanced ML Algorithms</h2>
+            <p class="section-subtitle">Our platform combines multiple machine learning techniques to deliver actionable retail insights.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-network-wired"></i>
+                </div>
+                <h3 class="feature-title">Association Rule Mining</h3>
+                <p class="feature-desc">Discover hidden patterns in customer purchases using the Apriori algorithm. Find which products are frequently bought together with high confidence.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3 class="feature-title">Time Series Forecasting</h3>
+                <p class="feature-desc">Predict future sales trends using Facebook Prophet. Accurately forecast transaction volumes up to 30 days ahead with confidence intervals.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3 class="feature-title">Customer Segmentation</h3>
+                <p class="feature-desc">Identify distinct customer groups using K-Means clustering. Understand shopping behaviors and tailor marketing strategies for each segment.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <h3 class="feature-title">Smart Recommendations</h3>
+                <p class="feature-desc">Generate personalized product recommendations based on current basket contents. Increase cross-selling opportunities with confidence scores.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-database"></i>
+                </div>
+                <h3 class="feature-title">Real Transaction Data</h3>
+                <p class="feature-desc">Built on actual grocery transaction data spanning 2 years with nearly 39,000 transactions across 3,898 unique customers.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                <h3 class="feature-title">Actionable Insights</h3>
+                <p class="feature-desc">Transform data into business recommendations including targeted promotions, inventory optimization, and personalized marketing campaigns.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section id="results">
+        <div class="results-container">
+            <div class="section-header">
+                <span class="section-tag">Analysis Results</span>
+                <h2 class="section-title">Market Basket Analysis Insights</h2>
+                <p class="section-subtitle">Key findings from analyzing thousands of grocery transactions.</p>
+            </div>
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-header">
+                        <h3 class="result-title">Top Association Rules by Confidence</h3>
+                        <span class="result-badge">High Confidence</span>
+                    </div>
+                    <div class="association-rule">
+                        <div class="rule-items">
+                            <span class="rule-item">meat</span>
+                            <span class="rule-item">domestic eggs</span>
+                        </div>
+                        <i class="fas fa-arrow-right rule-arrow"></i>
+                        <div class="rule-items">
+                            <span class="rule-item consequent">whole milk</span>
+                        </div>
+                        <div class="rule-metrics">
+                            <div class="metric">
+                                <div class="metric-value">78.4%</div>
+                                <div class="metric-label">Confidence</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">1.71</div>
+                                <div class="metric-label">Lift</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="association-rule">
+                        <div class="rule-items">
+                            <span class="rule-item">juice</span>
+                            <span class="rule-item">chocolate</span>
+                        </div>
+                        <i class="fas fa-arrow-right rule-arrow"></i>
+                        <div class="rule-items">
+                            <span class="rule-item consequent">whole milk</span>
+                        </div>
+                        <div class="rule-metrics">
+                            <div class="metric">
+                                <div class="metric-value">75.0%</div>
+                                <div class="metric-label">Confidence</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">1.64</div>
+                                <div class="metric-label">Lift</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="association-rule">
+                        <div class="rule-items">
+                            <span class="rule-item">yogurt</span>
+                            <span class="rule-item">brown bread</span>
+                        </div>
+                        <i class="fas fa-arrow-right rule-arrow"></i>
+                        <div class="rule-items">
+                            <span class="rule-item consequent">whole milk</span>
+                        </div>
+                        <div class="rule-metrics">
+                            <div class="metric">
+                                <div class="metric-value">73.5%</div>
+                                <div class="metric-label">Confidence</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">1.60</div>
+                                <div class="metric-label">Lift</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="result-card">
+                    <div class="result-header">
+                        <h3 class="result-title">Top Association Rules by Lift</h3>
+                        <span class="result-badge">Strong Association</span>
+                    </div>
+                    <div class="association-rule">
+                        <div class="rule-items">
+                            <span class="rule-item">tropical fruit</span>
+                            <span class="rule-item">sausage</span>
+                        </div>
+                        <i class="fas fa-arrow-right rule-arrow"></i>
+                        <div class="rule-items">
+                            <span class="rule-item consequent">yogurt</span>
+                        </div>
+                        <div class="rule-metrics">
+                            <div class="metric">
+                                <div class="metric-value">53.1%</div>
+                                <div class="metric-label">Confidence</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">1.88</div>
+                                <div class="metric-label">Lift</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="association-rule">
+                        <div class="rule-items">
+                            <span class="rule-item">coffee</span>
+                            <span class="rule-item">canned beer</span>
+                        </div>
+                        <i class="fas fa-arrow-right rule-arrow"></i>
+                        <div class="rule-items">
+                            <span class="rule-item consequent">soda</span>
+                        </div>
+                        <div class="rule-metrics">
+                            <div class="metric">
+                                <div class="metric-value">53.7%</div>
+                                <div class="metric-label">Confidence</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">1.71</div>
+                                <div class="metric-label">Lift</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="association-rule">
+                        <div class="rule-items">
+                            <span class="rule-item">frankfurter</span>
+                            <span class="rule-item">sausage</span>
+                        </div>
+                        <i class="fas fa-arrow-right rule-arrow"></i>
+                        <div class="rule-items">
+                            <span class="rule-item consequent">soda</span>
+                        </div>
+                        <div class="rule-metrics">
+                            <div class="metric">
+                                <div class="metric-value">52.9%</div>
+                                <div class="metric-label">Confidence</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">1.69</div>
+                                <div class="metric-label">Lift</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="result-card full-width">
+                    <div class="result-header">
+                        <h3 class="result-title">Most Frequent Itemsets</h3>
+                        <span class="result-badge">High Support</span>
+                    </div>
+                    <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem;">
+                        <div style="text-align: center; padding: 1.5rem; background: rgba(255,255,255,0.03); border-radius: 1rem;">
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">🥛</div>
+                            <div style="font-weight: 600;">Whole Milk</div>
+                            <div style="color: var(--primary); font-weight: 700; font-size: 1.25rem;">45.8%</div>
+                        </div>
+                        <div style="text-align: center; padding: 1.5rem; background: rgba(255,255,255,0.03); border-radius: 1rem;">
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">🥬</div>
+                            <div style="font-weight: 600;">Vegetables</div>
+                            <div style="color: var(--primary); font-weight: 700; font-size: 1.25rem;">37.7%</div>
+                        </div>
+                        <div style="text-align: center; padding: 1.5rem; background: rgba(255,255,255,0.03); border-radius: 1rem;">
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">🍞</div>
+                            <div style="font-weight: 600;">Rolls/Buns</div>
+                            <div style="color: var(--primary); font-weight: 700; font-size: 1.25rem;">35.0%</div>
+                        </div>
+                        <div style="text-align: center; padding: 1.5rem; background: rgba(255,255,255,0.03); border-radius: 1rem;">
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">🥤</div>
+                            <div style="font-weight: 600;">Soda</div>
+                            <div style="color: var(--primary); font-weight: 700; font-size: 1.25rem;">31.3%</div>
+                        </div>
+                        <div style="text-align: center; padding: 1.5rem; background: rgba(255,255,255,0.03); border-radius: 1rem;">
+                            <div style="font-size: 2rem; margin-bottom: 0.5rem;">🍶</div>
+                            <div style="font-weight: 600;">Yogurt</div>
+                            <div style="color: var(--primary); font-weight: 700; font-size: 1.25rem;">28.3%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Charts Section -->
+    <section id="charts">
+        <div class="section-header">
+            <span class="section-tag">Visualizations</span>
+            <h2 class="section-title">Data Visualizations & Analytics</h2>
+            <p class="section-subtitle">Visual insights from time series forecasting and customer clustering analysis.</p>
+        </div>
+        <div class="charts-grid">
+            <div class="chart-card">
+                <h3 class="chart-title">
+                    <i class="fas fa-chart-area"></i>
+                    Sales Forecast with Prophet
+                </h3>
+                <img src="Charts/TimeSeries/Figure_1.png" alt="Time Series Forecast" class="chart-img">
+            </div>
+            <div class="chart-card">
+                <h3 class="chart-title">
+                    <i class="fas fa-calendar-alt"></i>
+                    Trend Components Analysis
+                </h3>
+                <img src="Charts/TimeSeries/Figure_2.png" alt="Time Series Components" class="chart-img">
+            </div>
+            <div class="chart-card">
+                <h3 class="chart-title">
+                    <i class="fas fa-project-diagram"></i>
+                    Customer Clusters Visualization
+                </h3>
+                <img src="Charts/cluster/Figure_1.png" alt="Cluster Analysis" class="chart-img">
+            </div>
+            <div class="chart-card">
+                <h3 class="chart-title">
+                    <i class="fas fa-chart-pie"></i>
+                    Cluster Size Distribution
+                </h3>
+                <img src="Charts/cluster/Figure_2.png" alt="Cluster Distribution" class="chart-img">
+            </div>
+        </div>
+
+        <!-- Forecasting Summary -->
+        <div style="margin-top: 3rem; background: var(--dark-light); padding: 2rem; border-radius: 1.5rem; border: 1px solid rgba(255,255,255,0.05);">
+            <h3 style="margin-bottom: 1.5rem; font-size: 1.25rem;">
+                <i class="fas fa-brain" style="color: var(--primary); margin-right: 0.5rem;"></i>
+                Forecasting Performance
+            </h3>
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem;">
+                <div style="text-align: center;">
+                    <div style="font-size: 2rem; font-weight: 700; color: var(--primary);">728</div>
+                    <div style="color: var(--gray); font-size: 0.9rem;">Days of Data</div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 2rem; font-weight: 700; color: var(--primary);">30</div>
+                    <div style="color: var(--gray); font-size: 0.9rem;">Days Forecasted</div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 2rem; font-weight: 700; color: var(--primary);">9.91</div>
+                    <div style="color: var(--gray); font-size: 0.9rem;">Mean Absolute Error</div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 2rem; font-weight: 700; color: var(--primary);">~55</div>
+                    <div style="color: var(--gray); font-size: 0.9rem;">Avg Daily Transactions</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clusters Section -->
+    <section id="clusters">
+        <div class="section-header">
+            <span class="section-tag">Customer Segmentation</span>
+            <h2 class="section-title">4 Distinct Customer Segments</h2>
+            <p class="section-subtitle">K-Means clustering reveals unique shopping behaviors with targeted recommendations for each segment.</p>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;">
+            <!-- Light Shoppers -->
+            <div class="cluster-card" style="display: flex; flex-direction: column;">
+                <div class="cluster-header">
+                    <span class="cluster-name">🛒 Light Shoppers</span>
+                </div>
+                <div class="cluster-metrics">
+                    <div class="cluster-metric">
+                        <div class="cluster-metric-value">7.25</div>
+                        <div class="cluster-metric-label">Avg Items</div>
+                    </div>
+                    <div class="cluster-metric">
+                        <div class="cluster-metric-value">743</div>
+                        <div class="cluster-metric-label">Customers</div>
+                    </div>
+                </div>
+                <div class="cluster-items" style="margin-bottom: 1rem;">
+                    <span class="cluster-item">whole milk</span>
+                    <span class="cluster-item">vegetables</span>
+                    <span class="cluster-item">rolls/buns</span>
+                </div>
+                <div style="margin-top: auto; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1);">
+                    <div style="font-size: 0.8rem; font-weight: 600; color: var(--primary); margin-bottom: 0.75rem;">
+                        <i class="fas fa-lightbulb" style="margin-right: 0.5rem;"></i>Recommendations
+                    </div>
+                    <ul style="list-style: none; font-size: 0.8rem; color: var(--gray);">
+                        <li style="margin-bottom: 0.5rem; display: flex; align-items: flex-start; gap: 0.5rem;">
+                            <i class="fas fa-check" style="color: var(--primary); margin-top: 0.2rem; font-size: 0.7rem;"></i>
+                            Target with entry-level promotions
+                        </li>
+                        <li style="margin-bottom: 0.5rem; display: flex; align-items: flex-start; gap: 0.5rem;">
+                            <i class="fas fa-check" style="color: var(--primary); margin-top: 0.2rem; font-size: 0.7rem;"></i>
+                            Send welcome emails with popular items
+                        </li>
+                        <li style="display: flex; align-items: flex-start; gap: 0.5rem;">
+                            <i class="fas fa-check" style="color: var(--primary); margin-top: 0.2rem; font-size: 0.7rem;"></i>
+                            Offer small basket discounts
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Regular Customers -->
+            <div class="cluster-card" style="display: flex; flex-direction: column;">
+                <div class="cluster-header">
+                    <span class="cluster-name">⭐ Regular Customers</span>
+                </div>
+                <div class="cluster-metrics">
+                    <div class="cluster-metric">
+                        <div class="cluster-metric-value">23.15</div>
+                        <div class="cluster-metric-label">Avg Items</div>
+                    </div>
+                    <div class="cluster-metric">
+                        <div class="cluster-metric-value">184</div>
+                        <div class="cluster-metric-label">Customers</div>
+                    </div>
+                </div>
+                <div class="cluster-items" style="margin-bottom: 1rem;">
+                    <span class="cluster-item">whole milk</span>
+                    <span class="cluster-item">vegetables</span>
+                    <span class="cluster-item">soda</span>
+                </div>
+                <div style="margin-top: auto; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1);">
+                    <div style="font-size: 0.8rem; font-weight: 600; color: var(--primary); margin-bottom: 0.75rem;">
+                        <i class="fas fa-lightbulb" style="margin-right: 0.5rem;"></i>Recommendations
+                    </div>
+                    <ul style="list-style: none; font-size: 0.8rem; color: var(--gray);">
+                        <li style="margin-bottom: 0.5rem; display: flex; align-items: flex-start; gap: 0.5rem;">
+                            <i class="fas fa-check" style="color: var(--primary); margin-top: 0.2rem; font-size: 0.7rem;"></i>
+                            Implement loyalty program
+                        </li>
+                        <li style="margin-bottom: 0.5rem; display: flex; align-items: flex-start; gap: 0.5rem;">
+                            <i class="fas fa-check" style="color: var(--primary); margin-top: 0.2rem; font-size: 0.7rem;"></i>
+                            Suggest bundled products
+                        </li>
+                        <li style="display: flex; align-items: flex-start; gap: 0.5rem;">
+                            <i class="fas fa-check" style="color: var(--primary); margin-top: 0.2rem; font-size: 0.7rem;"></i>
+                            Send personalized shopping reminders
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Premium Shoppers -->
+            <div class="cluster-card" style="display: flex; flex-direction: column;">
+                <div class="cluster-header">
+                    <span class="cluster-name">💎 Premium Shoppers</span>
+                </div>
+                <div class="cluster-metrics">
+                    <div class="cluster-metric">
+                        <div class="cluster-metric-value">12.07</div>
+                        <div class="cluster-metric-label">Avg Items</div>
+                    </div>
+                    <div class="cluster-metric">
+                        <div class="cluster-metric-value">334</div>
+                        <div class="cluster-metric-label">Customers</div>
+                    </div>
+                </div>
+                <div class="cluster-items" style="margin-bottom: 1rem;">
+                    <span class="cluster-item">whole milk</span>
+                    <span class="cluster-item">yogurt</span>
+                    <span class="cluster-item">citrus fruit</span>
+                </div>
+                <div style="margin-top: auto; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1);">
+                    <div style="font-size: 0.8rem; font-weight: 600; color: var(--primary); margin-bottom: 0.75rem;">
+                        <i class="fas fa-lightbulb" style="margin-right: 0.5rem;"></i>Recommendations
+                    </div>
+                    <ul style="list-style: none; font-size: 0.8rem; color: var(--gray);">
+                        <li style="margin-bottom: 0.5rem; display: flex; align-items: flex-start; gap: 0.5rem;">
+                            <i class="fas fa-check" style="color: var(--primary); margin-top: 0.2rem; font-size: 0.7rem;"></i>
+                            Offer premium product lines
+                        </li>
+                        <li style="margin-bottom: 0.5rem; display: flex; align-items: flex-start; gap: 0.5rem;">
+                            <i class="fas fa-check" style="color: var(--primary); margin-top: 0.2rem; font-size: 0.7rem;"></i>
+                            Provide VIP customer benefits
+                        </li>
+                        <li style="display: flex; align-items: flex-start; gap: 0.5rem;">
+                            <i class="fas fa-check" style="color: var(--primary); margin-top: 0.2rem; font-size: 0.7rem;"></i>
+                            Early access to new products
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Bulk Buyers -->
+            <div class="cluster-card" style="display: flex; flex-direction: column;">
+                <div class="cluster-header">
+                    <span class="cluster-name">📦 Bulk Buyers</span>
+                </div>
+                <div class="cluster-metrics">
+                    <div class="cluster-metric">
+                        <div class="cluster-metric-value">3.47</div>
+                        <div class="cluster-metric-label">Avg Items</div>
+                    </div>
+                    <div class="cluster-metric">
+                        <div class="cluster-metric-value">731</div>
+                        <div class="cluster-metric-label">Customers</div>
+                    </div>
+                </div>
+                <div class="cluster-items" style="margin-bottom: 1rem;">
+                    <span class="cluster-item">whole milk</span>
+                    <span class="cluster-item">soda</span>
+                    <span class="cluster-item">tropical fruit</span>
+                </div>
+                <div style="margin-top: auto; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1);">
+                    <div style="font-size: 0.8rem; font-weight: 600; color: var(--primary); margin-bottom: 0.75rem;">
+                        <i class="fas fa-lightbulb" style="margin-right: 0.5rem;"></i>Recommendations
+                    </div>
+                    <ul style="list-style: none; font-size: 0.8rem; color: var(--gray);">
+                        <li style="margin-bottom: 0.5rem; display: flex; align-items: flex-start; gap: 0.5rem;">
+                            <i class="fas fa-check" style="color: var(--primary); margin-top: 0.2rem; font-size: 0.7rem;"></i>
+                            Bulk purchase discounts
+                        </li>
+                        <li style="margin-bottom: 0.5rem; display: flex; align-items: flex-start; gap: 0.5rem;">
+                            <i class="fas fa-check" style="color: var(--primary); margin-top: 0.2rem; font-size: 0.7rem;"></i>
+                            Free delivery for large orders
+                        </li>
+                        <li style="display: flex; align-items: flex-start; gap: 0.5rem;">
+                            <i class="fas fa-check" style="color: var(--primary); margin-top: 0.2rem; font-size: 0.7rem;"></i>
+                            Volume-based rewards program
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <i class="fas fa-shopping-cart"></i>
+                Smart Grocery
+            </div>
+            <p class="footer-text">CS 542 Machine Learning Project • SUNY Polytechnic Institute</p>
+            <div class="footer-links">
+                <a href="#features">Features</a>
+                <a href="#results">Results</a>
+                <a href="#charts">Analytics</a>
+                <a href="#clusters">Segments</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

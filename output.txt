@@ -1,0 +1,515 @@
+ Dataset Preview:
+   Member_number        Date   itemDescription
+0           1808  21-07-2015    tropical fruit
+1           2552  05-01-2015        whole milk
+2           2300  19-09-2015         pip fruit
+3           1187  12-12-2015  other vegetables
+4           3037  01-02-2015        whole milk
+
+Total transactions: 38765
+Unique members: 3898
+
+================================================================================
+Sample Member Shopping Baskets:
+Member 1000: ['soda', 'whole milk', 'whole milk', 'sausage', 'pickled vegetables', 'canned beer', 'yogurt', 'misc. beverages', 'salty snack', 'sausage', 'semi-finished bread', 'hygiene articles', 'pastry']
+Member 1001: ['whole milk', 'sausage', 'curd', 'soda', 'beef', 'frankfurter', 'white bread', 'frankfurter', 'whipped/sour cream', 'rolls/buns', 'whole milk', 'soda']
+Member 1002: ['other vegetables', 'frozen vegetables', 'specialty chocolate', 'sugar', 'butter', 'whole milk', 'tropical fruit', 'butter milk']
+Member 1003: ['rolls/buns', 'dental care', 'detergent', 'sausage', 'rolls/buns', 'rolls/buns', 'frozen meals', 'root vegetables']
+Member 1004: ['whole milk', 'packaged fruit/vegetables', 'whole milk', 'canned beer', 'chocolate', 'dish cleaner', 'shopping bags', 'other vegetables', 'pip fruit', 'red/blush wine', 'root vegetables', 'whole milk', 'frozen fish', 'hygiene articles', 'pastry', 'chocolate', 'rolls/buns', 'other vegetables', 'tropical fruit', 'rolls/buns', 'cling film/bags']
+Member 1005: ['whipped/sour cream', 'rolls/buns', 'margarine', 'rolls/buns']
+Member 1006: ['shopping bags', 'frankfurter', 'rice', 'frankfurter', 'softener', 'whole milk', 'rolls/buns', 'skin care', 'rolls/buns', 'bottled water', 'chicken', 'chocolate', 'whole milk', 'bottled beer', 'flour']
+Member 1008: ['liver loaf', 'root vegetables', 'yogurt', 'soda', 'dessert', 'hamburger meat', 'tropical fruit', 'photo/film', 'white wine', 'liquor (appetizer)', 'yogurt', 'domestic eggs']
+Member 1009: ['tropical fruit', 'herbs', 'yogurt', 'newspapers', 'ketchup', 'cocoa drinks', 'pastry', 'yogurt', 'canned fish']
+Member 1010: ['sliced cheese', 'coffee', 'pip fruit', 'candles', 'rolls/buns', 'kitchen towels', 'bottled water', 'frankfurter', 'specialty bar', 'bottled water', 'UHT-milk', 'pip fruit']
+
+ Running Apriori algorithm...
+
+================================================================================
+MARKET BASKET ANALYSIS RESULTS
+================================================================================
+
+ SUMMARY STATISTICS:
+--------------------------------------------------------------------------------
+Total Frequent Itemsets Found: 3016
+Total Association Rules Found: 1117
+Average Confidence: 0.570
+Average Lift: 1.325
+
+ TOP FREQUENT ITEMSETS:
+--------------------------------------------------------------------------------
+                      itemsets  support
+                  (whole milk) 0.458184
+            (other vegetables) 0.376603
+                  (rolls/buns) 0.349666
+                        (soda) 0.313494
+                      (yogurt) 0.282966
+              (tropical fruit) 0.233710
+             (root vegetables) 0.230631
+               (bottled water) 0.213699
+                     (sausage) 0.206003
+(other vegetables, whole milk) 0.191380
+
+ TOP RULES BY CONFIDENCE:
+--------------------------------------------------------------------------------
+(If customer buys X, they will likely buy Y)
+
+meat, domestic eggs → whole milk
+  Confidence: 78.43% | Support: 0.010 | Lift: 1.71
+
+fruit/vegetable juice, chocolate → whole milk
+  Confidence: 75.00% | Support: 0.011 | Lift: 1.64
+
+rolls/buns, yogurt, other vegetables, bottled water → whole milk
+  Confidence: 74.55% | Support: 0.011 | Lift: 1.63
+
+pip fruit, yogurt, bottled water → whole milk
+  Confidence: 74.07% | Support: 0.010 | Lift: 1.62
+
+rolls/buns, yogurt, brown bread → whole milk
+  Confidence: 73.53% | Support: 0.013 | Lift: 1.60
+
+other vegetables, brown bread, bottled water → whole milk
+  Confidence: 72.31% | Support: 0.012 | Lift: 1.58
+
+rolls/buns, yogurt, bottled beer → whole milk
+  Confidence: 72.00% | Support: 0.014 | Lift: 1.57
+
+curd, yogurt, soda → whole milk
+  Confidence: 71.19% | Support: 0.011 | Lift: 1.55
+
+shopping bags, rolls/buns, yogurt, other vegetables → whole milk
+  Confidence: 70.91% | Support: 0.010 | Lift: 1.55
+
+rolls/buns, domestic eggs, sausage → whole milk
+  Confidence: 70.69% | Support: 0.011 | Lift: 1.54
+
+ TOP RULES BY LIFT:
+--------------------------------------------------------------------------------
+(Strongest product associations)
+
+tropical fruit, rolls/buns, sausage → yogurt
+  Lift: 1.88 | Confidence: 53.09% | Support: 0.011
+
+curd, sausage, whole milk → yogurt
+  Lift: 1.86 | Confidence: 52.70% | Support: 0.010
+
+rolls/buns, sausage, other vegetables, whole milk → yogurt
+  Lift: 1.84 | Confidence: 51.96% | Support: 0.014
+
+meat, domestic eggs → whole milk
+  Lift: 1.71 | Confidence: 78.43% | Support: 0.010
+
+coffee, canned beer → soda
+  Lift: 1.71 | Confidence: 53.66% | Support: 0.011
+
+whole milk, UHT-milk, soda → other vegetables
+  Lift: 1.70 | Confidence: 63.93% | Support: 0.010
+
+frozen meals, rolls/buns, whole milk → other vegetables
+  Lift: 1.70 | Confidence: 63.93% | Support: 0.010
+
+sausage, UHT-milk → other vegetables
+  Lift: 1.70 | Confidence: 63.89% | Support: 0.012
+
+frankfurter, sausage → soda
+  Lift: 1.69 | Confidence: 52.89% | Support: 0.016
+
+yogurt, sausage, other vegetables, whole milk → rolls/buns
+  Lift: 1.68 | Confidence: 58.89% | Support: 0.014
+
+================================================================================
+
+INTERPRETATION GUIDE:
+--------------------------------------------------------------------------------
+• Support: How frequently the itemset appears in transactions
+• Confidence: Probability of buying Y given that X is bought
+• Lift > 1: Items are likely to be bought together
+• Lift = 1: No association between items
+• Lift < 1: Items are unlikely to be bought together
+================================================================================
+
+
+================================================================================
+ CUSTOMER RECOMMENDATION EXAMPLE:
+================================================================================
+Customer has: ['frankfurter', 'sausage']
+
+Recommended items:
+
+1. soda
+   Confidence: 52.89%
+   Lift: 1.69
+   Based on: frankfurter, sausage
+
+2. whole milk
+   Confidence: 52.89%
+   Lift: 1.15
+   Based on: frankfurter, sausage
+
+3. whole milk
+   Confidence: 51.93%
+   Lift: 1.13
+   Based on: sausage
+================================================================================
+
+Enter items the customer has (comma-separated): Enter number of recommendations to return (default 5): ================================================================================
+TIME SERIES FORECASTING
+================================================================================
+
+ Preprocessing dates...
+Date range: 2014-01-01 00:00:00 to 2015-12-30 00:00:00
+Total days: 728
+
+ Aggregating data...
+Analyzing overall transaction volume
+Total data points: 728
+
+ Training forecasting model...
+
+ Forecasting next 30 days...
+
+================================================================================
+FORECAST SUMMARY
+================================================================================
+
+ Last 5 Historical Days:
+        ds      yhat  yhat_lower  yhat_upper
+2015-12-26 53.420505   35.914654   68.896694
+2015-12-27 53.433414   37.197022   69.641790
+2015-12-28 52.273246   36.349255   68.870753
+2015-12-29 54.277671   39.982342   70.584054
+2015-12-30 54.258386   38.233813   70.143507
+
+ Next 5 Forecasted Days:
+        ds      yhat  yhat_lower  yhat_upper
+2015-12-31 55.747166   40.323898   71.606031
+2016-01-01 55.644931   39.987091   71.298438
+2016-01-02 56.038028   39.755602   71.858330
+2016-01-03 56.374094   40.509659   71.901421
+2016-01-04 55.522737   39.146878   72.168856
+
+ Mean Absolute Error: 9.91
+
+ Generating visualizations...
+================================================================================
+
+
+================================================================================
+FINDING OPTIMAL NUMBER OF CLUSTERS
+================================================================================
+
+ Optimal number of clusters: 9
+   Silhouette Score: 0.464
+
+================================================================================
+CLUSTER SUMMARY STATISTICS
+================================================================================
+
+         total_items               ... avg_basket_size diversity_ratio      
+              count   mean   std  ...             std            mean   std
+cluster                           ...                                      
+0               743   7.25  1.12  ...            1.12            1.00  0.00
+1               184  23.15  3.11  ...            3.11            0.81  0.06
+2               334  12.07  1.32  ...            1.32            0.80  0.05
+3               731   3.47  1.14  ...            1.14            1.00  0.00
+4               263  16.56  1.96  ...            1.96            0.95  0.04
+5               384   7.61  1.14  ...            1.14            0.86  0.03
+6               163   6.26  2.20  ...            2.20            0.72  0.08
+7               732  11.41  1.28  ...            1.28            0.95  0.04
+8               364  16.21  1.54  ...            1.54            0.83  0.05
+
+[9 rows x 9 columns]
+
+ Cluster Sizes:
+--------------------------------------------------------------------------------
+Cluster 0: 743 customers (19.1%)
+Cluster 1: 184 customers (4.7%)
+Cluster 2: 334 customers (8.6%)
+Cluster 3: 731 customers (18.8%)
+Cluster 4: 263 customers (6.7%)
+Cluster 5: 384 customers (9.9%)
+Cluster 6: 163 customers (4.2%)
+Cluster 7: 732 customers (18.8%)
+Cluster 8: 364 customers (9.3%)
+
+================================================================================
+CUSTOMER SEGMENT PROFILES
+================================================================================
+
+================================================================================
+CLUSTER 0:  Light Shoppers
+================================================================================
+
+ Size: 743 customers (19.1%)
+
+ Average Metrics:
+   total_items: 7.25
+   unique_items: 7.25
+   avg_basket_size: 7.25
+   diversity_ratio: 1.00
+
+🔝 Top 10 Items:
+   whole milk: 275 (5.1%)
+   other vegetables: 227 (4.2%)
+   rolls/buns: 225 (4.2%)
+   soda: 203 (3.8%)
+   yogurt: 160 (3.0%)
+   root vegetables: 153 (2.8%)
+   tropical fruit: 144 (2.7%)
+   bottled water: 131 (2.4%)
+   sausage: 126 (2.3%)
+   citrus fruit: 116 (2.2%)
+
+================================================================================
+CLUSTER 1:  Regular Customers
+================================================================================
+
+ Size: 184 customers (4.7%)
+
+ Average Metrics:
+   total_items: 23.15
+   unique_items: 18.65
+   avg_basket_size: 23.15
+   diversity_ratio: 0.81
+
+🔝 Top 10 Items:
+   whole milk: 289 (6.8%)
+   other vegetables: 225 (5.3%)
+   rolls/buns: 195 (4.6%)
+   soda: 160 (3.8%)
+   yogurt: 137 (3.2%)
+   root vegetables: 114 (2.7%)
+   sausage: 108 (2.5%)
+   bottled water: 100 (2.3%)
+   tropical fruit: 95 (2.2%)
+   shopping bags: 87 (2.0%)
+
+================================================================================
+CLUSTER 2:  Premium Shoppers
+================================================================================
+
+ Size: 334 customers (8.6%)
+
+ Average Metrics:
+   total_items: 12.07
+   unique_items: 9.60
+   avg_basket_size: 12.07
+   diversity_ratio: 0.80
+
+🔝 Top 10 Items:
+   whole milk: 367 (9.1%)
+   other vegetables: 257 (6.4%)
+   rolls/buns: 227 (5.6%)
+   yogurt: 157 (3.9%)
+   soda: 154 (3.8%)
+   root vegetables: 126 (3.1%)
+   sausage: 108 (2.7%)
+   tropical fruit: 104 (2.6%)
+   bottled water: 97 (2.4%)
+   citrus fruit: 96 (2.4%)
+
+================================================================================
+CLUSTER 3:  Bulk Buyers
+================================================================================
+
+ Size: 731 customers (18.8%)
+
+ Average Metrics:
+   total_items: 3.47
+   unique_items: 3.47
+   avg_basket_size: 3.47
+   diversity_ratio: 1.00
+
+🔝 Top 10 Items:
+   whole milk: 141 (5.6%)
+   other vegetables: 122 (4.8%)
+   soda: 105 (4.1%)
+   rolls/buns: 100 (3.9%)
+   yogurt: 80 (3.2%)
+   tropical fruit: 75 (3.0%)
+   citrus fruit: 63 (2.5%)
+   bottled water: 62 (2.4%)
+   root vegetables: 54 (2.1%)
+   sausage: 52 (2.1%)
+
+================================================================================
+CLUSTER 4: Segment 4
+================================================================================
+
+ Size: 263 customers (6.7%)
+
+ Average Metrics:
+   total_items: 16.56
+   unique_items: 15.68
+   avg_basket_size: 16.56
+   diversity_ratio: 0.95
+
+🔝 Top 10 Items:
+   whole milk: 202 (4.6%)
+   rolls/buns: 157 (3.6%)
+   soda: 150 (3.4%)
+   other vegetables: 149 (3.4%)
+   yogurt: 139 (3.2%)
+   root vegetables: 120 (2.8%)
+   tropical fruit: 107 (2.5%)
+   bottled water: 106 (2.4%)
+   sausage: 95 (2.2%)
+   citrus fruit: 90 (2.1%)
+
+================================================================================
+CLUSTER 5: Segment 5
+================================================================================
+
+ Size: 384 customers (9.9%)
+
+ Average Metrics:
+   total_items: 7.61
+   unique_items: 6.54
+   avg_basket_size: 7.61
+   diversity_ratio: 0.86
+
+🔝 Top 10 Items:
+   whole milk: 229 (7.8%)
+   rolls/buns: 166 (5.7%)
+   other vegetables: 157 (5.4%)
+   soda: 138 (4.7%)
+   yogurt: 122 (4.2%)
+   root vegetables: 93 (3.2%)
+   tropical fruit: 91 (3.1%)
+   bottled water: 78 (2.7%)
+   sausage: 69 (2.4%)
+   citrus fruit: 64 (2.2%)
+
+================================================================================
+CLUSTER 6: Segment 6
+================================================================================
+
+ Size: 163 customers (4.2%)
+
+ Average Metrics:
+   total_items: 6.26
+   unique_items: 4.47
+   avg_basket_size: 6.26
+   diversity_ratio: 0.72
+
+🔝 Top 10 Items:
+   whole milk: 124 (12.1%)
+   other vegetables: 83 (8.1%)
+   soda: 65 (6.4%)
+   yogurt: 58 (5.7%)
+   rolls/buns: 57 (5.6%)
+   root vegetables: 37 (3.6%)
+   bottled water: 31 (3.0%)
+   tropical fruit: 23 (2.3%)
+   sausage: 23 (2.3%)
+   pastry: 22 (2.2%)
+
+================================================================================
+CLUSTER 7: Segment 7
+================================================================================
+
+ Size: 732 customers (18.8%)
+
+ Average Metrics:
+   total_items: 11.41
+   unique_items: 10.85
+   avg_basket_size: 11.41
+   diversity_ratio: 0.95
+
+🔝 Top 10 Items:
+   whole milk: 436 (5.2%)
+   other vegetables: 354 (4.2%)
+   rolls/buns: 333 (4.0%)
+   soda: 279 (3.3%)
+   yogurt: 272 (3.3%)
+   tropical fruit: 222 (2.7%)
+   root vegetables: 198 (2.4%)
+   bottled water: 187 (2.2%)
+   citrus fruit: 181 (2.2%)
+   pastry: 179 (2.1%)
+
+================================================================================
+CLUSTER 8: Segment 8
+================================================================================
+
+ Size: 364 customers (9.3%)
+
+ Average Metrics:
+   total_items: 16.21
+   unique_items: 13.45
+   avg_basket_size: 16.21
+   diversity_ratio: 0.83
+
+🔝 Top 10 Items:
+   whole milk: 439 (7.4%)
+   other vegetables: 324 (5.5%)
+   soda: 260 (4.4%)
+   rolls/buns: 256 (4.3%)
+   yogurt: 209 (3.5%)
+   root vegetables: 176 (3.0%)
+   tropical fruit: 171 (2.9%)
+   sausage: 169 (2.9%)
+   bottled water: 141 (2.4%)
+   pastry: 134 (2.3%)
+
+ Generating cluster visualizations...
+
+================================================================================
+ BUSINESS RECOMMENDATIONS BY SEGMENT
+================================================================================
+
+================================================================================
+CLUSTER 0 (743 customers, avg 7 items)
+================================================================================
+
+Recommended Actions:
+  •  Target with entry-level promotions
+  •  Send welcome emails with popular items
+  •  Offer small basket discounts to increase purchase frequency
+
+================================================================================
+CLUSTER 1 (184 customers, avg 23 items)
+================================================================================
+
+Recommended Actions:
+  •  Implement loyalty program
+  •  Suggest bundled products
+  •  Send personalized shopping reminders
+
+================================================================================
+CLUSTER 2 (334 customers, avg 12 items)
+================================================================================
+
+Recommended Actions:
+  •  Offer premium product lines
+  •  Provide VIP customer benefits
+  •  Early access to new products
+
+================================================================================
+CLUSTER 3 (731 customers, avg 3 items)
+================================================================================
+
+Recommended Actions:
+  •  Bulk purchase discounts
+  •  Free delivery for large orders
+  •  Volume-based rewards program
+
+================================================================================
+CLUSTER 4 (263 customers, avg 17 items)
+================================================================================
+
+================================================================================
+CLUSTER 5 (384 customers, avg 8 items)
+================================================================================
+
+================================================================================
+CLUSTER 6 (163 customers, avg 6 items)
+================================================================================
+
+================================================================================
+CLUSTER 7 (732 customers, avg 11 items)
+================================================================================
+
+================================================================================
+CLUSTER 8 (364 customers, avg 16 items)
+================================================================================
